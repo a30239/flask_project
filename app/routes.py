@@ -8,3 +8,6 @@ from flask import render_template
 def index():
     #将参数传递到index.html模板
     return render_template('index.html',title = '你好',user = {'username':'aa'})
+@app.route('/test')
+def test():
+    return render_template('test.html')
