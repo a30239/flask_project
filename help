@@ -5,4 +5,4 @@ flask_project
         | - static
         | - templates
     | - venv 虚拟环境
-    | - project.py 项目入口
+    | - project.py 项目入口 运行这个程序
