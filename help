@@ -1,0 +1,8 @@
+flask_project
+    | - app 应用程序
+        | - __init__.py 项目初始化
+        | - routes.py 路由设置
+        | - static
+        | - templates
+    | - venv 虚拟环境
+    | - project.py 项目入口
