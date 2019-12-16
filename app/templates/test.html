@@ -5,8 +5,8 @@
 {% block title %}这是一个测试页{% endblock title %}
 {#<title>test</title>直接用html语言不能实现 #}
 {% block body %}
-    <img src="/static/timg.jpg" width="70%" height="200px" class=" center-block " alt="Responsive image">
-{#{% block navbar %}#}
+{#    <img src="/static/timg.jpg" width="70%" height="200px" class=" center-block " alt="Responsive image">#}
+{% block navbar %}
 <!-- 务必使用 <nav> 元素，或者，如果使用的是通用的 <div> 元素的话，务必为导航条设置 role="navigation" 属性，这样能够让使用辅助设备的用户明确知道这是一个导航区域。-->
 <nav class="navbar navbar-default">
     <div class="container">
@@ -22,22 +22,43 @@
         </div>
     </div><!-- /.navbar-collapse -->
 </nav>
-{#{% endblock navbar %}#}
+{% endblock navbar %}
+{#放入同一个容器中#}
 <div class="container">
     <h3>天区覆盖查询</h3>
-    <div class="dropdown">
-        <lable>望远镜编号：</lable>
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        Dropdown<span class="caret"></span>
+    <label>望远镜编号：</label>
+<!--select 下拉表单-->
+{#    <select class="form-control">#}
+{#        <option>Java</option>#}
+{#        <option>Html</option>#}
+{#        <option>IOS</option>#}
+{#    </select>#}
+    <div class="dropdown" style="display: inline-block">
+        <button id="dropdownMenu1" class="btn btn-default" type="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            从数据库取第一个数
+            <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
         </ul>
     </div>
+    <label>日期：</label>
+    <div class="dropdown" style="display: inline-block">
+        <button id="dropdownMenu2" class="btn btn-default " type="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            2019001
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+        </ul>
+    </div>
+    <button type="button" style="float: right" class="btn btn-default">确定</button>
     <table class="table table-bordered ">
     <!--thead表格标题行，标识表格的列，用th，tbody表格的主体，tr行 td单元格-->
         <thead>
@@ -60,6 +81,7 @@
 {#            {% for item in row %}#}
 {#                <td>{{ item }}</td>#}
 {#            {% endfor %}#}
+                <td>1</td>
                 <td>从数据库中提取x1</td>
                 <td>从数据库中提取y1</td>
                 <td>从数据库中提取x2</td>
@@ -73,7 +95,11 @@
 {#        {% endfor %}#}
         </tbody>
     </table>
-</div>>
+</div>
+{% block scripts %}
+    <script src="{{bootstrap_find_resource('jquery.js', cdn='jquery')}}"></script>
+    <script src="{{bootstrap_find_resource('js/bootstrap.js', cdn='bootstrap')}}"></script>
+{%- endblock scripts %}
 {% endblock body %}
 {#</body>#}
 {#</html>#}
