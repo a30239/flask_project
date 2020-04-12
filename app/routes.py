@@ -5,9 +5,9 @@ from flask import render_template
 import mysql.connector
 
 #数据库连接
-config ={'host':'122.51.219.231',#默认127.0.0.1
+config ={'host':'********',#默认127.0.0.1
         'user':'conuser',
-        'password':'TXYMySQL@Connect2019',
+        'password':'*****',
         'port':3306 ,#默认即为3306
         'database':'g96-data',
         'charset':'utf8'#默认即为utf8
