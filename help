@@ -11,3 +11,6 @@ flask_project
 将数据库中的日期和望远镜编号提取出来 并显示在下拉菜单中
 通过选中的下拉菜单中的数据 提交并在数据库中进行查找
 将查询到的数据 显示在表格中
+
+flask-bootstrap
+mysql-connector

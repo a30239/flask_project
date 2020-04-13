@@ -1,0 +1,58 @@
+{%extends "bootstrap/base.html"%}
+
+{% block title %}datatest{% endblock title %}
+{% block body %}
+    <label>日期：</label>
+    <select>
+        {% for date in result %}
+            <option value=" date">{{ date[0] }}</option>
+    </select>
+{#    <div class="dropdown" style="display: inline-block">#}
+{#        <button id="dropdownMenu2" class="btn btn-default " type="button" data-toggle="dropdown"#}
+{#                aria-haspopup="true" aria-expanded="false">#}
+{#            2019001#}
+{#            <span class="caret"></span>#}
+{#        </button>#}
+{#        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">#}
+{#            {% for date in result %}#}
+{#                <li><a href="#">{{ date[0] }}</a></li>#}
+{#            {% endfor %}#}
+{#            <li><a href="#">1</a></li>#}
+{#            <li><a href="#">2</a></li>#}
+{#            <li><a href="#">3</a></li>#}
+{#        </ul>#}
+{#    </div>#}
+
+{#<h3>数据表格</h3>#}
+{#    <table class="table table-bordered table-striped">#}
+{#        <thead>#}
+{#        <tr>#}
+{#            <th>id</th>#}
+{#            <th>x1</th>#}
+{#            <th>y1</th>#}
+{#            <th>x2</th>#}
+{#            <th>y2</th>#}
+{#            <th>x3</th>#}
+{#            <th>y3</th>#}
+{#            <th>x4</th>#}
+{#            <th>y4</th>#}
+{#            <th>mag</th>#}
+{#        </tr>#}
+{#        </thead>#}
+{#        <tbody>#}
+{#        {% for row in result %}#}
+{#        <tr>#}
+{#            {% for item in row %}#}
+{#                <td>{{ item }}</td>#}
+{#            {% endfor %}#}
+{#        </tr>#}
+{#        {% endfor %}#}
+{#        </tbody>#}
+{#    </table>#}
+
+{% block scripts %}
+    <script src="{{bootstrap_find_resource('jquery.js', cdn='jquery')}}"></script>
+    <script src="{{bootstrap_find_resource('js/bootstrap.js', cdn='bootstrap')}}"></script>
+{%- endblock scripts %}
+
+{% endblock body %}
